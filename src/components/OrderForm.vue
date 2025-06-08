@@ -149,7 +149,6 @@
       <p style="text-align: center; margin-top: 0"><strong>Contact No:</strong> +91-9876543210</p>
       <hr />
       <p><strong>Order ID:</strong> {{ billToPrint.orderId || 'N/A' }}</p>
-      <p><strong>Bill No:</strong> {{ billToPrint.billNumber || 'N/A' }}</p>
       <p><strong>Order Type:</strong> {{ billToPrint.order_type }}</p>
       <p><strong>Table Number:</strong> {{ billToPrint.table_number }}</p>
       <p><strong>Customer Name:</strong> {{ billToPrint.customer_name }}</p>
