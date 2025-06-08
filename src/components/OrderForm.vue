@@ -458,4 +458,37 @@ body {
     display: none !important;
   }
 }
+@media (max-width: 768px) {
+  .order-form-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .menu-section,
+  .order-section {
+    width: 100%;
+    height: auto;
+  }
+
+  .header {
+    font-size: 24px;
+    padding: 10px;
+  }
+
+  table {
+    font-size: 14px;
+    overflow-x: auto;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .input {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
 </style>
