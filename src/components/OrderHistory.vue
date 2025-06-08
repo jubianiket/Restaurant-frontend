@@ -41,7 +41,9 @@ export default {
 
     onMounted(async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/order-history')
+        const response = await axios.get(
+          'https://restaurant-orders-3r73.onrender.com/api/order-history',
+        )
         orders.value = response.data
       } catch (error) {
         console.error('Failed to fetch order history:', error)

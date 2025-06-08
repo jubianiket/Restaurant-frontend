@@ -134,10 +134,19 @@ export default {
         if (filters.value.endDate) params.endDate = filters.value.endDate
 
         const [salesRes, dailyRes, paymentRes, pendingRes] = await Promise.all([
-          axios.get('http://localhost:3000/api/dashboard/sales-by-item', { params }),
-          axios.get('http://localhost:3000/api/dashboard/daily-sales', { params }),
-          axios.get('http://localhost:3000/api/dashboard/payment-status-distribution', { params }),
-          axios.get('http://localhost:3000/api/dashboard/top-pending-customers'),
+          axios.get('https://restaurant-orders-3r73.onrender.com/api/dashboard/sales-by-item', {
+            params,
+          }),
+          axios.get('https://restaurant-orders-3r73.onrender.com/api/dashboard/daily-sales', {
+            params,
+          }),
+          axios.get(
+            'https://restaurant-orders-3r73.onrender.com/api/dashboard/payment-status-distribution',
+            { params },
+          ),
+          axios.get(
+            'https://restaurant-orders-3r73.onrender.com/api/dashboard/top-pending-customers',
+          ),
         ])
 
         salesByItem.value = salesRes.data

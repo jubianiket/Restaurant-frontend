@@ -225,7 +225,7 @@ export default {
   methods: {
     async fetchMenuItems() {
       try {
-        const res = await axios.get('http://localhost:3000/api/menu-items')
+        const res = await axios.get('https://restaurant-orders-3r73.onrender.com/api/menu-items')
         this.menuItems = res.data.map((item) => ({
           ...item,
           rate: parseFloat(item.rate),
@@ -264,7 +264,7 @@ export default {
 
       if (this.paymentStatus === 'Pending') {
         try {
-          await axios.post('http://localhost:3000/api/orders', order)
+          await axios.post('https://restaurant-orders-3r73.onrender.com/api/orders', order)
           alert('Order saved with Pending payment.')
           this.resetOrderForm()
         } catch (error) {
@@ -286,7 +286,10 @@ export default {
     async generateBill(idx) {
       const order = this.confirmedOrders[idx]
       try {
-        const response = await axios.post('http://localhost:3000/api/orders', order)
+        const response = await axios.post(
+          'https://restaurant-orders-3r73.onrender.com/api/orders',
+          order,
+        )
         if (response.data.success) {
           alert(`Bill generated! Order ID: ${response.data.orderId}`)
           this.billToPrint = {
