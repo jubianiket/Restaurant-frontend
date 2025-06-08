@@ -363,12 +363,19 @@ body {
   justify-content: center;
   align-items: flex-start;
   padding: 40px 20px;
+
+  /* ADDED: fix for text color on mobile browsers (ensure contrast) */
+  color: #000 !important;
 }
 .input {
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 0.375rem;
   width: 100%;
+
+  /* ADDED: font-size for better readability on mobile */
+  font-size: 16px;
+  color: #000; /* FIXED: ensure input text is visible */
 }
 
 .order-form-container {
@@ -380,6 +387,9 @@ body {
   width: 100%;
   max-width: 1100px;
   min-height: 600px;
+
+  /* ADDED: allow scrolling on small screens if content is big */
+  overflow-x: auto;
 }
 
 .menu-section {
@@ -390,6 +400,9 @@ body {
   height: 100%;
   overflow-y: auto;
   width: 400px;
+
+  /* FIXED: minimum width so menu text doesn't collapse */
+  min-width: 280px;
 }
 
 .order-section {
@@ -399,6 +412,9 @@ body {
   box-shadow: 0 2px 6px rgba(30, 60, 30, 0.1);
   height: 100%;
   overflow-y: auto;
+
+  /* FIXED: min width to keep content visible */
+  min-width: 280px;
 }
 .content-container {
   background: linear-gradient(180deg, #137a75 0%, #80d0c7 100%);
@@ -407,6 +423,9 @@ body {
   padding: 20px;
   margin: auto;
   max-width: 1200px;
+
+  /* ADDED: prevent content from shrinking too much */
+  min-width: 320px;
 }
 @media print {
   body {
@@ -468,6 +487,9 @@ body {
   .order-section {
     width: 100%;
     height: auto;
+
+    /* FIXED: add bottom margin for spacing on mobile */
+    margin-bottom: 20px;
   }
 
   .header {
@@ -483,6 +505,9 @@ body {
   button {
     font-size: 14px;
     padding: 6px 10px;
+
+    /* ADDED: increase tap target size on mobile */
+    min-width: 80px;
   }
 
   .input {
@@ -491,4 +516,24 @@ body {
   }
 }
 
+/* ADDED: fix for tables and text visibility on mobile */
+table,
+th,
+td {
+  color: #000 !important; /* enforce black text for readability */
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+/* ADDED: fix for scrollbars on overflow containers */
+.menu-section::-webkit-scrollbar,
+.order-section::-webkit-scrollbar {
+  width: 8px;
+}
+
+.menu-section::-webkit-scrollbar-thumb,
+.order-section::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
 </style>
